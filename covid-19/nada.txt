@@ -1,0 +1,9 @@
+                                 <div class="row mt8">
+                                    <div class="col-md-12" >
+                                        Total Infected in the world: <span t-field="o.set_total_infected_world" />
+                                    </div>
+                                </div>
+
+
+
+ <img src="/home/jesusm/Downloads/download.jpg" alt="Logo">

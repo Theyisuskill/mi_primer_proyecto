@@ -21,9 +21,9 @@ class DateReportWizard(models.TransientModel):
 
     def print_report(self):
         Covid19=self.env['covid.covid_19']
-        domain=[
-                ('date','>',self.start_date),
-                ('date','<',self.end_date)
+        domain= [
+                ('date','>=',self.start_date),
+                ('date','<=',self.end_date)
                 ]
         if self.country_ids:
             domain.append(('country_id','in',self.country_ids.ids))

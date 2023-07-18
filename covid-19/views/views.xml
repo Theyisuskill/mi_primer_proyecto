@@ -18,7 +18,7 @@
         <field name="name">covid.covid_19.graph</field>
         <field name="model">covid.covid_19</field>
         <field name="arch" type="xml">
-            <graph string="Covid 19">
+            <graph string="Covid Jesus">
                 <field name="country_id"/>
                 <field name="infected" type="measure" />
                 
@@ -32,7 +32,7 @@
         <field name="name">covid.covid_19.pivot</field>
         <field name="model">covid.covid_19</field>
         <field name="arch" type="xml">
-            <pivot string="Covid 19">
+            <pivot string="Covid Jesus">
                 <field name="date" type="row"/>
                 <field name="country_id" type="row"/>
                 <field name="infected" type="measure"/>
@@ -76,6 +76,9 @@
                 <field name="total_recovered"/>
                 <field name="total_deceased"/>
                 <field name="total_infected_world"/>
+                <field name="total_recovered_world"/>
+                <field name="total_deceased_world"/>
+                <title for="deseaced" string="Nombre Grande para Diferenciar las Entidades" class="oe_edit_only"/>
             </group>
         </form>
       </field>
@@ -83,7 +86,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="covid_19_action_window">
-      <field name="name">Registro Covid 19</field>
+      <field name="name">Registro Covid Jesus</field>
       <field name="res_model">covid.covid_19</field>
       <field name="view_mode">tree,form,graph,calendar,pivot</field>
     </record>
@@ -92,7 +95,7 @@
 
     <!-- Top menu item -->
     
-    <menuitem name="Covid-19" id="covid_19_menu_root"/>
+    <menuitem name="covid_Jesus" id="covid_19_menu_root"/>
 
     <!-- menu categories -->
     <menuitem 

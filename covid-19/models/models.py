@@ -16,6 +16,10 @@ class covid_19(models.Model):
     total_recovered = fields.Integer(string='Total Recovered',compute='set_total_recovered',required=True,default=0)
     total_deceased = fields.Integer(string='Total Deceased',compute='set_total_deceased',required=True,default=0)
     total_infected_world = fields.Integer(string='Total Infected in the world',compute='set_total_infected_world',required=True,default=0)
+    total_recovered_world = fields.Integer(string='Total recovered in the world',compute='set_total_recovered_world',required=True,default=0)
+    total_deceased_world = fields.Integer(string='Total deceased in the world',compute='set_total_deceased_world',required=True,default=0)
+
+
 
     def set_total_infected(self):
         for data in self:
@@ -56,8 +60,26 @@ class covid_19(models.Model):
             records = self.search(domain)
             infecteds = records.mapped('infected')
             data.total_infected_world = sum(infecteds) + data.total_infected
+            
+    def set_total_recovered_world(self):
+        all_records = self.search([])
+        for data in self:
+            domain = [('date', '<=', data.date)]
+            records = self.search(domain)
+            recovereds = records.mapped('recovered')
+            data.total_recovered_world = sum(recovereds) + data.total_recovered
                     
-    
+    def set_total_deceased_world(self):
+        all_records = self.search([])
+        for data in self:
+            domain = [('date', '<=', data.date)]
+            records = self.search(domain)
+            deceaseds = records.mapped('infected')
+            data.total_deceased_world = sum(deceaseds) + data.total_deceased
+            
+            
+            
+            
     def set_percentage_infected(self):
         total=0
         if self.infected:

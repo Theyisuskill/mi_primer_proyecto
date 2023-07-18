@@ -5,7 +5,7 @@ from odoo import models, fields, api
 
 class ReportCovid19WithDates(models.AbstractModel):
     _name = 'report.covid_19.report_covid_19_dates'
-    _description = 'COVID-19 report with dates'
+    _description = 'COVID Jesus report with dates'
 
     @api.model
     def _get_report_values(self, docids, data=None):

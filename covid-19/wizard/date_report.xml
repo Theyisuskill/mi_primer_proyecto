@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="view_date_report_wizard" model="ir.ui.view">
-            <field name="name">Report Between Date</field>
+            <field name="name">Report por fecha</field>
             <field name="model">covid_19.date.report.wizard</field>
             <field name="arch" type="xml">
                 <form string="Invoice Sales Order">
